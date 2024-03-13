@@ -1,35 +1,38 @@
-// http://www.omdbapi.com/?i=tt3896198&apikey=59b1b3f9
+
+// https://pokeapi.co/api/v2/pokemon/pikachu
 
 
-
-async function fetchData() {}
-
-//     try{
-//         const pokemonName = document.getElementById("pokemonName").value.toLowerCase();
-//         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
-
-//         if(!response.ok){
-//             throw new Error("can't find that Pokemon")
+// fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+//     // .then(response => console.log(response))
+//     .then(response => {
+        
+//         if(!response.ok) {
+//             throw new Error ("Pokemon not found")
 //         }
+//         return response.json();
+//     })
+//     .then(data => console.log(data.name))
+//     .catch(error => console.error(error));
 
-//         const data = await response.json();
-//         const pokemonSprites = data.sprites.front_default;
-//         const imgElement = document.getElementById("pokemonSrite");
+fetchDate();
 
-//         imgElement.src = pokemonSprites;
-//         imgElement.style.display  = "block";
-//     }
-//     catch(error){
-//         console.error(error);
-//     }
-// }
+async function fetchDate() {
+    try {
+        const pokemonName = document.getElementById("pokemonName").value.toLowerCase();
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
+        // console.log(pokemonName)
 
-// use MobaGuides\MobileLegendsApi\MobileLegends;
-// use MobaGuides\MobileLegendsApi\Fetchers\Hero;
+        if(!response.ok) {
+            throw new Error("Pokemon not found")
+        }
+        const data = await response.json();
+        const pokemonSprite = data.sprites.front_default;
+        const imgElement = document.getElementById("pokemonSprite");
+        imgElement.src = pokemonSprite;
+        imgElement.style.display = "block"
 
-// $hero = MobileLegends::make(Hero::class);
-// var_dump($hero->all());
-
-fetch ("https://anime-facts-rest-api.herokuapp.com/api/v1/:anime_name")
-    .then(response => console.log(response))
-    .catch(error => console.error(error));
+    }
+    catch(error){
+        console.error(error);
+    }
+}
