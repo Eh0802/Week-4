@@ -1,12 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 * {
+    font-family: 'Roboto', sans-serif;
     padding: 0;
-    margin: 0;
+    margin: 0; 
     box-sizing: border-box;
 }
 
-
-.container {
-    position: absolute;
-    top:50%;
-    left: 50%;
+.logo__img {
+    width: 200px;
+    height: 75px;
 }
+
+li{
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* #landing {
+    height: calc(100vh);
+} */
+
+nav {
+    background: red;
+    height: 100px;
+}
+
+.row {
+    width: 100%;
+}
+
+.nav__container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__list {
+    display: flex;
+    justify-content: center;
+}
+
+.link {
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 24px;
+    font-size: 20px;
+}
+
+.pokemon__container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pokemon__img {
+    width: 100%; 
+}
+
+.pokemon__wrapper {
+    width: 100%;
+    max-width: 1200px;
+    padding-top: 100px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.pokemons {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.pokemon {
+    width: 25%;
+    border: 4px solid blue;
+    padding: 16px;
+    margin: 16px 16px;
+    border-radius: 24px;
+}
+
+.pokemon__name,
+.pokemon__id,
+.pokemon__type{
+    /* line-height: 1.5; */
+    margin: 8px 0;
+}
+
+footer{
+    width: 100%;
+    padding-top: 100px;
+}
+
+.footer__container {
+    width: 100%;
+    height: 200px;
+    background-color: #242424;
+}
+
+.footer {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25px;
+    margin: 0 auto;
+}
+
+.footer__img {
+    width: 70px;
+    height: 70px;
+}
+
+.footer__list {
+    display: flex;
+    justify-content:space-between;
+    width: 100%;
+    max-width: 500px;
+    padding-top: 16px;
+}
+
+.footer__link {
+    color: white;
+}
+
+.copyright {
+    padding: 16px;
+    color: white;
+}
+
+
+
+
+
+
