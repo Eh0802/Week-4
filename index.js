@@ -32,22 +32,28 @@
 
 // }
 
+const pokemonSprites = document.querySelector(" .sprite")
+const pokemonName = document.querySelector(" .name")
+const pokemonId = document.querySelector(" .id")
+const pokemonType = document.querySelector(" .type")
 
+async function fetchData() {
+    const response = await fetch("https://pokeapi.co/api/v2/pokemon/1");
+    const data = await response.json();
+    console.log(data
+    //  data.map(() => 
+    //     `<div class="pokemon">
+    //     <h3 class="pokemon__name">Name:???</h3>
+    //     <h4 class="pokemon__id">ID:???</h4>
+    //     <h4 class="pokemon__type">Type:???</h4>
+    //     </div>`
+    //  )
+    )
+    pokemonSprites.src = data.sprites.front_default;
+    pokemonName.innerHTML = data.name
+    pokemonId.innerHTML = data.id
+    pokemonType.innerHTML = data.types
 
-// async function fetchData() {
-//     const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0")
-//     const pokemonName = await response.json();
-//     console.log(
-//     pokemonName.map(
-//         (pokemon) => `<div class="container">
-//     <img src="" alt="sprites">
-//     <h3 class="name">name:</h3>
-//     <h4 class="id">id:</h4>
-//     <h4 class="types">types:</h4>` 
-//     )
-//         .join("")
-//     );
+}
 
-// }
-
-// fetchData();
+fetchData()
