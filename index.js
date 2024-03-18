@@ -32,28 +32,49 @@
 
 // }
 
-const pokemonSprites = document.querySelector(" .sprite")
-const pokemonName = document.querySelector(" .name")
-const pokemonId = document.querySelector(" .id")
-const pokemonType = document.querySelector(" .type")
+// const pokemonSprites = document.querySelector(" .sprite")
+// const pokemonName = document.querySelector(" .name")
+// const pokemonId = document.querySelector(" .id")
+// const pokemonType = document.querySelector(" .type")
 
-async function fetchData() {
-    const response = await fetch("https://pokeapi.co/api/v2/pokemon/1");
-    const data = await response.json();
-    console.log(data
-    //  data.map(() => 
-    //     `<div class="pokemon">
-    //     <h3 class="pokemon__name">Name:???</h3>
-    //     <h4 class="pokemon__id">ID:???</h4>
-    //     <h4 class="pokemon__type">Type:???</h4>
-    //     </div>`
-    //  )
-    )
-    pokemonSprites.src = data.sprites.front_default;
-    pokemonName.innerHTML = data.name
-    pokemonId.innerHTML = data.id
-    pokemonType.innerHTML = data.types
+// async function fetchData() {
+//     const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0");
+//     const data = await response.json();
+//     console.log(response)
+//     console.log(
+//      result.map(() => 
+//         `<div class="pokemon">
+//         <h3 class="pokemon__name">Name:???</h3>
+//         <h4 class="pokemon__id">ID:???</h4>
+//         <h4 class="pokemon__type">Type:???</h4>
+//         </div>`
+//      )
+//     )
+//     // pokemonSprites.src = data.sprites.front_default;
+//     // pokemonName.innerHTML = data.name
+//     // pokemonId.innerHTML = data.id
+//     // pokemonType.innerHTML = data.types.ytpe
 
+// }
+
+// fetchData()
+
+async function rearch() {
+   const response =  await fetch("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0");
+   const data = await response.json();
+   const pokemonEl = document.querySelector(' .pokemon')
+console.log(data)
+   pokemonEl.innerHTML = data.map (
+        () => `<div class="pokemon">
+        <figure>
+        <img src="assets/channels4_png.jpg" class="pokemon__img" alt="Pokemon Logo">
+        </figure>
+        <h3 class="pokemon__name">Name:???</h3>
+        <h4 class="pokemon__id">ID:???</h4>
+        <h4 class="pokemon__type">Type:???</h4>
+        </div>
+        </div>`
+        ).join("");
 }
 
-fetchData()
+rearch()
