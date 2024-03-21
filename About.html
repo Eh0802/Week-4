@@ -35,11 +35,15 @@
     </nav>
 </section>
 <main>
+
+    <!-- <h1 id="pokemonName">Name</h1> -->
+    <div class="search">
         <input
-          type="text"
-          id="pokemonName"
-          placeholder="Enter Pokemon Name"/>
+        type="text"
+        id="pokemonName"
+        placeholder="Enter Pokemon Name"/>
         <button onclick="fetchDate()">Search</button>
+    </div>
       <section>
         <div class="pokemon__container">
           <div class="pokemon__wrapper">
@@ -49,7 +53,7 @@
                   <img
                     src="" 
                     class="pokemon__img"
-                    alt="Pokemon Logo"
+                    alt="Pokemon picture"
                   />
                 </figure>
                 <h3 class="pokemon__name">Name: <span class="name"></span></h3>
