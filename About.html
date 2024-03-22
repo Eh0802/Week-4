@@ -37,13 +37,14 @@
 <main>
 
     <!-- <h1 id="pokemonName">Name</h1> -->
-    <div class="search">
+        <div class="search">
         <input
         type="text"
         id="pokemonName"
-        placeholder="Enter Pokemon Name"/>
-        <button onclick="fetchDate()">Search</button>
-    </div>
+        placeholder="Enter Pokemon Name or ID"/><br>
+        <button onclick="fetchDate()"><i class="fa fa-search"></i></button>
+        </div>
+
       <section>
         <div class="pokemon__container">
           <div class="pokemon__wrapper">
@@ -58,7 +59,10 @@
                 </figure>
                 <h3 class="pokemon__name">Name: <span class="name"></span></h3>
                 <h4 class="pokemon__id">ID: <span class="id"></span></h4>
-                <h4 class="pokemon__type">Type: <span class="type"></span></h4>
+                <div class="weigh__height">
+                    <h4 class="pokemon__weight">Weight: <span class="weight"></span></h4>
+                    <h4 class="pokemon__height">Height: <span class="height"></span></h4>
+                </div>
               </div>
             </div>
           </div>
