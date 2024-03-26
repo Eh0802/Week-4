@@ -45,7 +45,7 @@ async function fetchDate() {
         console.log(data)
         pokemonName.innerHTML = data.name;
         pokemonId.innerHTML = data.id;
-        pokemonSprites.src = data.sprites.front_default;
+        pokemonSprites.src = data.sprites.front_shiny;
         pokemonWeight.innerHTML = data.weight
         pokemonHeight.innerHTML = data.height
 
