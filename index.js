@@ -102,15 +102,14 @@ fetch(`https://pokeapi.co/api/v2/pokemon?limit=${MAX_POKEMON}`)
 .then((response) => response.json())
 .then((data) => {
     allPokemons = data.resulte;
-    displayPokemons(allPokemons)
-    // console.log(data);
+    console.log(data);
     // console.log(data.results)
     // console.log(data.results[0].name)
     // console.log(data.results[0].url)
+    displayPokemons(allPokemons)
 });
-
 async function fetchRedirect(id) {
-
+    
     try {
         const [pokemon, pokemonSpecies] = await Promise.
         all([fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
@@ -130,7 +129,7 @@ async function fetchRedirect(id) {
 function displayPokemons(pokemon) {
     listWrapper.innerHTML = "";
 
-    pokemon.for((pokemon) => {
+    pokemon.forEach((pokemon) => {
         const pokemonID = pokemon.url.split("/")[6];
         const listItem = document.createElement("div");
         listItem.className = "list-item";
