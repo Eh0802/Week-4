@@ -36,9 +36,41 @@
 // fetchPokemon();
 
 
-const pokedex = document.getElementById("pokedex");
+const pokemonSprites = document.querySelector(" .pokemon__img")
+const pokemonName = document.querySelector(" .name")
+const pokemonId = document.querySelector(" .id")
+const pokemonWeight = document.querySelector(" .weight")
+const pokemonHeight = document.querySelector(" .height")
 
-console.log(pokedex)
+fetchDate();
+
+async function fetchDate() {
+    try {
+        const namePokemon = document.getElementById("pokemonName").value.toLowerCase();
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${namePokemon}`)
+        console.log(response)
+        if(!response.ok) {
+            throw new Error("Pokemon not found")
+        }
+        const data = await response.json();
+        console.log(data)
+        pokemonName.innerHTML = data.name;
+        pokemonId.innerHTML = data.id;
+        pokemonSprites.src = data.sprites.front_shiny;
+        pokemonWeight.innerHTML = data.weight
+        pokemonHeight.innerHTML = data.height
+
+    }
+    catch(error){
+        console.error(error);
+    }
+
+
+}
+
+const pokedex = document.getElementById("pokemons");
+
+console.log(pokemons)
 
 const featchPokemon = () => {
 
@@ -53,10 +85,13 @@ const featchPokemon = () => {
         const pokemon = results.map((data) => ({
             name: data.name,
             id: data.id,
-            image: data.sprites["front_shiny"],
+            height: data.height,
+            weight: data.weight,
+            image: data.sprites["front_default"],
             type: data.types.map((type) => type.type.name). join(", ")
 
         }));
+        console.log(results)
         displayPokemon(pokemon);
     }));
 
@@ -79,15 +114,36 @@ const featchPokemon = () => {
 };
 
 const displayPokemon = (pokemon) => {
-    console.log(pokemon);
     const pokeonHTMLSrtring = pokemon.map( card => `
-    <li>
-        <img src="${card.image}"/>
-        <h2>${card.id}. ${card.name}</h2>
-        <p>Type: ${card.type}</p>
-    </li>
+              <div class="pokemon">
+                <figure>
+                  <img
+                    src="${card.image}" 
+                    class="pokemon__img"
+                    alt="Pokemon picture"
+                  />
+                </figure>
+                <h3 class="pokemon__name">Name: <span class="name">${card.name}</span></h3>
+                <div class="id-type">
+                <h4 class="pokemon__id">ID: <span class="id">${card.id}</span></h4>
+                <h4 class="pokemon__type">Type: <span class="id">${card.type}</span></h4>
+                </div>
+                <div class="weigh__height">
+                    <h4 class="pokemon__weight">Weight: <span class="weight">${card.weight}</span></h4>
+                    <h4 class="pokemon__height">Height: <span class="height">${card.height}</span></h4>
+                </div>
+              </div>
+            </div>
     `).join("");
-    pokedex.innerHTML = pokeonHTMLSrtring;
+    pokemons.innerHTML = pokeonHTMLSrtring;
+    // const pokeonHTMLSrtring = pokemon.map( card => `
+    // <li>
+    //     <img src="${card.image}"/>
+    //     <h2>${card.id}. ${card.name}</h2>
+    //     <p>Type: ${card.type}</p>
+    // </li>
+    // `).join("");
+    // pokemons.innerHTML = pokeonHTMLSrtring;
 }
 
 
