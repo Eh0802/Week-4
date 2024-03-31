@@ -1,100 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script
-      src="https://kit.fontawesome.com/c8e4d183c2.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="About.js" defer></script>
-  </head>
-  <body>
-    <section id="landing">
-      <nav>
-        <div class="row">
-          <div class="nav__container">
-            <figure class="logo">
-              <img src="assets/Pokémon_logo.png" class="logo__img" alt="" />
-            </figure>
-            <ul class="nav__list">
-              <li class="links">
-                <a href="" class="link">Home</a>
-              </li>
-              <li class="links">
-                <a href="" class="link">About</a>
-              </li>
-              <li class="links">
-                <a href="" class="link">Contact</a>
-              </li>
-            </ul>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="About.css" />
+  <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+  <script src="About.js" defer></script>
+</head>
+
+<section id="landing">
+  <nav>
+    <div class="row">
+      <div class="nav__container">
+        <div class="nav"></div>
+        <figure class="logo">
+          <img src="assets/Pokémon_logo.png" class="logo__img" alt="" />
+        </figure>
+        <div  class="pokemon__search">
+          <div class="search">
+            <input type="text" id="pokemonName" placeholder="Enter Pokemon Name or ID: 1-1020" /><br>
+            <button onclick="fetchDate()"><i class="fa fa-search"></i></button>
           </div>
         </div>
-    </nav>
+        <ul class="nav__list">
+          <li class="links">
+            <a href="" class="link">Home</a>
+          </li>
+          <li class="links">
+            <a href="" class="link">About</a>
+          </li>
+          <li class="links">
+            <a href="" class="link">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 </section>
-<main>
-
-    <!-- <h1 id="pokemonName">Name</h1> -->
-        <div class="search">
-        <input
-        type="text"
-        id="pokemonName"
-        placeholder="Enter Pokemon Name or ID"/><br>
-        <button onclick="fetchDate()"><i class="fa fa-search"></i></button>
-        </div>
-
-      <section>
-        <div class="pokemon__container">
-          <div class="pokemon__wrapper">
-            <div class="pokemons">
-              <div class="pokemon">
-                <figure>
-                  <img
-                    src="" 
-                    class="pokemon__img"
-                    alt="Pokemon picture"
-                  />
-                </figure>
-                <h3 class="pokemon__name">Name: <span class="name"></span></h3>
+<body>
+  <main>
+    <section>
+      <div class="title">
+        <h1>Pokemon dex-cards</h1>
+      </div>
+      <div class="pokemon__container">
+        <div class="pokemon__wrapper">
+          <div id="pokemons">
+            <div class="pokemon">
+              <figure>
+                <img src="assets/channels4_png.jpg" class="pokemon__img" alt="Pokemon picture" />
+              </figure>
+              <h3 class="pokemon__name">Name: <span class="name"></span></h3>
+              <div class="id-type">
                 <h4 class="pokemon__id">ID: <span class="id"></span></h4>
-                <div class="weigh__height">
-                    <h4 class="pokemon__weight">Weight: <span class="weight"></span></h4>
-                    <h4 class="pokemon__height">Height: <span class="height"></span></h4>
-                </div>
+                <h4 class="pokemon__type">Type: <span class="type"></span></h4>
+              </div>
+              <div class="weigh__height">
+                <h4 class="pokemon__weight">Weight: <span class="weight"></span></h4>
+                <h4 class="pokemon__height">Height: <span class="height"></span></h4>
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </main>
-    <footer>
-      <div class="row">
-        <div class="footer__container">
-          <div class="footer">
-            <figure>
-              <img
-                src="assets/logo.png"
-                class="footer__img"
-                alt="Footer Logo"
-              />
-            </figure>
-            <ul class="footer__list">
-              <li class="footer__links">
-                <a href="" class="footer__link">Home</a>
-              </li>
-              <li class="footer__links">
-                <a href="" class="footer__link">About</a>
-              </li>
-              <li class="footer__links">
-                <a href="" class="footer__link">Contact</a>
-              </li>
-            </ul>
-            <div class="copyright">&COPY; 2024 Copyright by Pokemon</div>
-          </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="row">
+      <div class="footer__container">
+        <div class="footer">
+          <figure>
+            <img
+            src="assets/logo.png"
+            class="footer__img"
+            alt="Footer Logo"
+            />
+          </figure>
+          <ul class="footer__list">
+            <li class="footer__links">
+              <a href="" class="footer__link">Home</a>
+            </li>
+            <li class="footer__links">
+              <a href="" class="footer__link">About</a>
+            </li>
+            <li class="footer__links">
+              <a href="" class="footer__link">Contact</a>
+            </li>
+          </ul>
+          <div class="copyright">&COPY; 2024 Copyright by Pokemon</div>
         </div>
       </div>
-    </footer>
-  </body>
+    </div>
+  </footer>
+</body>
 </html>

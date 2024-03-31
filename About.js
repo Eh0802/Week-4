@@ -1,30 +1,5 @@
 
 
-
-
-// const pokemonName = document.querySelector(" .name")
-// const pokemonId = document.querySelector(" .id")
-// const pokemonType = document.querySelector(" .type")
-
-// async function fetchData() {
-
-//     const namePokemon = document.getElementById("pokemonName").value.toLowerCase();
-//     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/pikachu`)
-//     const data = await response.json();
-
-//     console.log(response)
-//     console.log(data)
-
-//     const pokemonSprites = document.querySelector(" .pokemon__img")
-//     pokemonSprites.src = data.sprites.front_default
-//     pokemonName.innerHTML = data.name
-//     pokemonId.innerHTML = data.id
-//     pokemonType.innerHTML = data.types[0]
-
-// }
-
-// fetchData()
-
 const pokemonSprites = document.querySelector(" .pokemon__img")
 const pokemonName = document.querySelector(" .name")
 const pokemonId = document.querySelector(" .id")
@@ -45,7 +20,7 @@ async function fetchDate() {
         console.log(data)
         pokemonName.innerHTML = data.name;
         pokemonId.innerHTML = data.id;
-        pokemonSprites.src = data.sprites.front_shiny;
+        pokemonSprites.src = data.sprites.front_default;
         pokemonWeight.innerHTML = data.weight
         pokemonHeight.innerHTML = data.height
 
