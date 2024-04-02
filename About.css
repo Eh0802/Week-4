@@ -8,12 +8,12 @@
     /* border: 2px solid ; */
 }
 
-body {
+main {
     background: url(assets/pokemonback.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    background-size: cover;
+    background-size:cover;
 }
 
 .logo__img {

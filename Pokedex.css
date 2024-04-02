@@ -26,6 +26,7 @@ li{
 
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 
  #landing {
@@ -58,6 +59,12 @@ nav {
     align-items: center;
 }
 
+.search__btn {
+    background-color: white;
+    padding: 16px;
+    border-radius: 5px;
+}
+
 .nav__list {
     display: flex;
     justify-content: center;
@@ -69,6 +76,8 @@ nav {
     padding-left: 24px;
     font-size: 20px;
 }
+
+
 
 form {
     width: 100%;

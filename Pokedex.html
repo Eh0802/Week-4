@@ -18,13 +18,16 @@
               <figure class="logo">
                 <img src="assets/Pokémon_logo.png" class="logo__img" alt="" />
               </figure>
-              <form action="" class="pokemon__search">
+              <!-- <form action="" class="pokemon__search">
                 <div class="search">
                     <input type="text"id="pokemonName"placeholder="Enter Pokemon Name or ID: 1-1020"/><br>
                     <button onclick="fetchDate()"><i class="fa fa-search"></i></button>
                     </div>
-                </form>
+                </form> -->
               <ul class="nav__list">
+                <li class="links">
+                  <a href="http://127.0.0.1:5500/About.html?" class="link"><span class="search__btn">Search</span></a>
+                </li>
                 <li class="links">
                   <a href="" class="link">Home</a>
                 </li>
@@ -43,7 +46,12 @@
     <main>
     <section>
       <div class="title">
-        <h1>Pokemon dex-cards</h1>
+        <h1>Pokemon Dex-Cards</h1>
+        <select id="filter" onchange="filterPokemons(event)">
+          <option value="" disabled selected>Sort</option>
+          <option value="ID">ID</option>
+          <option value="A-Z">A-Z</option>
+        </select>
       </div>
         <div class="pokemon__container">
           <div class="pokemon__wrapper">

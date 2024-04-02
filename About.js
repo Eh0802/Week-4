@@ -6,9 +6,9 @@ const pokemonId = document.querySelector(" .id")
 const pokemonWeight = document.querySelector(" .weight")
 const pokemonHeight = document.querySelector(" .height")
 
-fetchDate();
+fetchPokedex();
 
-async function fetchDate() {
+async function fetchPokedex() {
     try {
         const namePokemon = document.getElementById("pokemonName").value.toLowerCase();
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${namePokemon}`)
@@ -32,28 +32,4 @@ async function fetchDate() {
 
 }
 
-    // search()
-
-    // async function search() {
-
-    //     try {
-    //         const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0`)
-    //         console.log(response)
-
-    //         if(!response.ok){
-    //             throw new Error("Pokemon Not Found")
-    //         }
-
-    //         const data = await response.json();
-    //         console.log(data)
-    //         const pokemon = data.results[]
-    //         const h1Elemnt = document.getElementById("pokemonName");
-    //         h1Elemnt.innerHTML = pokemon.name
-        
-    //     }
-
-    //     catch(error){
-    //         console.error(error)
-    //     }
-    // }
 
