@@ -3,12 +3,13 @@
 const pokemonSprites = document.querySelector(" .pokemon__img")
 const pokemonName = document.querySelector(" .name")
 const pokemonId = document.querySelector(" .id")
+const pokemonType = document.querySelector(" .pokemon__type")
 const pokemonWeight = document.querySelector(" .weight")
 const pokemonHeight = document.querySelector(" .height")
 
-fetchPokedex();
+fetchDate();
 
-async function fetchPokedex() {
+async function fetchDate() {
     try {
         const namePokemon = document.getElementById("pokemonName").value.toLowerCase();
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${namePokemon}`)
@@ -20,9 +21,10 @@ async function fetchPokedex() {
         console.log(data)
         pokemonName.innerHTML = data.name;
         pokemonId.innerHTML = data.id;
-        pokemonSprites.src = data.sprites.front_default;
+        pokemonSprites.src = data.sprites['front_default'];
         pokemonWeight.innerHTML = data.weight
         pokemonHeight.innerHTML = data.height
+        pokemonType.innerHTML = data.types.map((type) => type.type.name)
 
     }
     catch(error){

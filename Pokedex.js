@@ -5,28 +5,39 @@ const pokemons = document.getElementById("pokemons");
 const featchPokemon = (filter) => {
 
     const promises = []
-    for (let i = 1; i <= 20; i++){
+    for (let i = 1; i <= 50; i++){
     const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
     promises.push (fetch(url).then((response) =>  response.json()));
     
 };
 
     Promise.all(promises).then((results => {
-        const pokemon = results.map((data) => ({
+        const pokemons = results.map((data) => ({
             name: data.name,
             id: data.id,
             height: data.height,
             weight: data.weight,
             image: data.sprites["front_default"],
             type: data.types.map((type) => type.type.name). join(", ")
-
+            
         }));
-        displayPokemon(pokemon);
+        displayPokemon(pokemons);
     }));
-};
 
+    if (filter === 'LOW_TO_HIGH') {
+        console.log(filter)
+}
+    else if (filter === 'HIGH_TO_LOW') {
+        console.log(filter)
+}
+}
+
+function filterPokemons(event) {
+    featchPokemon(event.target.value)
+}
 
 const displayPokemon = (pokemon) => {
+
     const pokeonHTMLSrtring = pokemon.map( card => `
               <div class="pokemon">
                 <figure>
@@ -48,15 +59,20 @@ const displayPokemon = (pokemon) => {
               </div>
             </div>
     `).join("");
+
     pokemons.innerHTML = pokeonHTMLSrtring;
-
-    if( filter === 'ID') {
-     pokemons.ariaSort((a, b) => a.id - b.id)
-    }
-}
-
-function filterPokemons(event) {
-        featchPokemon(event.target.value);
+    
+let pokeDexCard = pokemon
+    pokeDexCard.sort(function (a, b) {
+        if (a.name < b.name){
+            return -1;
+        }
+        if (a.name > b.name){
+            return 1;
+        }
+        return 0;
+    });  
+    
 }
 
 featchPokemon();
