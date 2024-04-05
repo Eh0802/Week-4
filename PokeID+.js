@@ -22,7 +22,7 @@ const featchPokemon = (filter) => {
             
         }));
         displayPokemon(pokemons);
-
+        
         if (filter === pokemons) {
             pokemons.sort(function(a,b){
                 if (a.name < b.name) {

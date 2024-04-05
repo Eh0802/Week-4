@@ -2,7 +2,7 @@
 const pokemons = document.getElementById("pokemons");
 
 
-const featchPokemon = (filter) => {
+const featchPokemon = () => {
 
     const promises = []
     for (let i = 1; i <= 10; i++){
@@ -21,31 +21,22 @@ const featchPokemon = (filter) => {
             type: data.types.map((type) => type.type.name). join(", ")
             
         }));
-        displayPokemon(pokemons);
 
-        if (filter === pokemons) {
-            pokemons.sort(function(a,b){
-                if (a.name < b.name) {
-                    return -1;
-                }
-    
-                if (a.name > b.name) {
-                    return 1;
-                }
-                return 0;
-            })
-            console.log(filter) 
-    }
-        else if (filter === 'HIGH_TO_LOW') {
-            console.log(filter)
-    }
+        pokemons.sort(function (a, b) {
+            if (a.name < b.name) {
+                return 1;
+            }
+            if (a.name > b.name) {
+                return -1;
+            }
+            return 0;
+        })
+
+        displayPokemon(pokemons);
     }));
 
 }
 
-function filterPokemons(event) {
-    featchPokemon(event.target.value)
-}
 
 const displayPokemon = (pokemon) => {
 
@@ -73,8 +64,6 @@ const displayPokemon = (pokemon) => {
 
     pokemons.innerHTML = pokeonHTMLSrtring;
     
-}
-
-console.log('elli')
+} 
 
 featchPokemon();
