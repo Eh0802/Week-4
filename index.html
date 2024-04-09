@@ -4,59 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <link rel="stylesheet" href="Pokedex.css">
-    <script src="Pokedex.js" defer></script>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
     <script
     src="https://kit.fontawesome.com/c8e4d183c2.js"
     crossorigin="anonymous"
   ></script>
 </head>
+<body>
     <section id="landing">
         <nav>
           <div class="row">
-          <div class="nav__container">
+            <div class="nav__container">
               <figure class="logo">
                 <img src="assets/Pokémon_logo.png" class="logo__img" alt="" />
               </figure>
-              <!-- <form action="" class="pokemon__search">
-                <div class="search">
-                    <input type="text"id="pokemonName"placeholder="Enter Pokemon Name or ID: 1-1020"/><br>
-                    <button onclick="fetchDate()"><i class="fa fa-search"></i></button>
-                    </div>
-                </form> -->
                <ul class="nav__list ">
                 <li class="links ">
-                  <a href="http://127.0.0.1:5500/Pokedex.html" class="link list__effect list__hover-black">Home</a>
+                  <a href="http://127.0.0.1:5500/index.html" class="link list__effect list__hover-black">Home</a>
                 </li>
                 <li class="links ">
-                  <a href="http://127.0.0.1:5500/PokeID+.html" class="link list__effect list__hover-black">ID+</a>
-                </li>
-                <li class="links ">
-                  <a href="http://127.0.0.1:5500/PokeA-Z.html" class="link list__effect list__hover-black">A-Z</a>
+                  <a href="http://127.0.0.1:5500/PokeID+.html" class="link list__effect list__hover-black">Pokemons</a>
                 </li>
                 <li class="links">
                   <a href="http://127.0.0.1:5500/Search.html" class="link"><span class="search__btn">Search</span></a>
                 </li>
               </ul>
+              <button class="btn__menu" onclick="openMenu()">
+                <i class="fa fa-bars"></i>
+              </button>
+              <div class="menu__backdrop">
+                <button class="btn__menu btn__menu--close" onclick="closeMenu()" >
+                  <i class="fa fa-times"></i>
+                </button>
+                <ul class="menu__links">
+                  <li class="menu__list">
+                    <a href="" class="menu__link">Home</a>
+                  </li>
+                  <li class="menu__list">
+                    <a href="#" class="menu__link">Home</a>
+                  </li>
+                  <li class="menu__list">
+                    <a href="#" class="menu__link">Home</a>
+                  </li>
+                  <li class="menu__list">
+                    <a href="#" class="menu__link">Home</a>
+                  </li>
+                  <li class="menu__list">
+                    <a href="#" class="menu__link">Home</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
       </nav>
+  <div class="loading"></div>
+  </div>
   </section>
-  <body>
     <main>
     <section>
       <div class="title">
-        <h1>Pokemon Dex-Cards</h1>
-        <!-- <select id="filter" onchange="filterPokemons(event)">
-          <option value="" disabled selected>Sort</option>
-          <option value="LOW_TO_HIGH">ID + </option>
-          <option value="HIGH_TO_LOW">ID - </option>
-        </select> -->
+        <h1>Pokemons Index</h1>
+      </div>
+      <div class="para">
+        <p class="title__para">Let's have a chance to learn all pokemon name, type, ID, width and height.</p>
+        <button class="button">
+          <a href="http://127.0.0.1:5500/PokeID-.html" class="para__link">Click Here</a>
+        </button>
+        <p class="title__para">To learn all Pokemon.</p>
       </div>
         <div class="pokemon__container">
           <div class="pokemon__wrapper">
             <div id="pokemons">
-          
             </div>
           </div>
         </div>
@@ -75,7 +94,7 @@
             </figure>
             <ul class="footer__list">
               <li class="footer__links">
-                <a href="" class="footer__link list__effect list__hover-white">Home</a>
+                <a href="http://127.0.0.1:5500/index.html" class="footer__link list__effect list__hover-white">Home</a>
               </li>
               <li class="footer__links">
                 <a href="" class="footer__link list__effect list__hover-white">About</a>

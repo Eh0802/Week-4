@@ -5,7 +5,7 @@ const pokemons = document.getElementById("pokemons");
 const featchPokemon = () => {
 
     const promises = []
-    for (let i = 1; i <= 10; i++){
+    for (let i = 1; i <= 1020; i++){
     const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
     promises.push (fetch(url).then((response) =>  response.json()));
     
@@ -65,5 +65,23 @@ const displayPokemon = (pokemon) => {
     pokemons.innerHTML = pokeonHTMLSrtring;
     
 } 
+
+function openMenu() {
+    document.body.classList += " menu--open"
+    
+}
+function closeMenu() {
+    document.body.classList.remove('menu--open')
+}
+
+window.addEventListener("load", () => {
+    const loading = document.querySelector(".loading");
+
+    loading.classList.add("loader-hidden");
+
+    loading.addEventListener("transitionend", () => {
+        document.body.removeChild("loading");
+    })
+} )
 
 featchPokemon();

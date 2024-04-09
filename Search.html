@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SearchPokemon</title>
-  <link rel="stylesheet" href="Pokedex.css" />
+  <link rel="stylesheet" href="Search.css" />
   <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
   <script src="Search.js" defer></script>
 </head>
@@ -21,23 +21,46 @@
         <div  class="pokemon__search">
           <div class="search">
             <input type="text" id="pokemonName" placeholder="Enter Pokemon Name or ID: 1-1020" /><br>
-            <button onclick="fetchDate()"><i class="fa fa-search"></i></button>
+            <button onclick="searchPokemon()"><i class="fa fa-search"></i></button>
           </div>
         </div>
         <ul class="nav__list">
           <li class="links">
-            <a href="http://127.0.0.1:5500/Pokedex.html" class="link list__effect list__hover-black">Home</a>
+            <a href="http://127.0.0.1:5500/index.html" class="link list__effect list__hover-black">Home</a>
           </li>
           <li class="links">
-            <a href="" class="link list__effect list__hover-black">About</a>
+            <a href="http://127.0.0.1:5500/PokeID+.html" class="link list__effect list__hover-black">ID+</a>
           </li>
           <li class="links">
-            <a href="" class="link list__effect list__hover-black">Contact</a>
+            <a href="http://127.0.0.1:5500/PokeA-Z.html" class="link list__effect list__hover-black">A-Z</a>
           </li>
         </ul>
+        <button class="btn__menu" onclick="openMenu()">
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="menu__backdrop">
+          <button class="btn__menu btn__menu--close" onclick="closeMenu()" >
+            <i class="fa fa-times"></i>
+          </button>
+          <ul class="menu__links">
+            <li class="menu__list">
+              <a href="" class="menu__link"></a>
+            </li>
+            <li class="menu__list">
+              <a href="http://127.0.0.1:5500/index.html" class="menu__link">Home</a>
+            </li>
+            <li class="menu__list">
+              <a href="http://127.0.0.1:5500/PokeID+.html" class="menu__link">ID+</a>
+            </li>
+            <li class="menu__list">
+              <a href="http://127.0.0.1:5500/PokeA-Z.html" class="menu__link">A-Z</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </nav>
+  <div class="loading"></div>
 </section>
 <body>
   <main>
@@ -61,6 +84,9 @@
                 <h4 class="pokemon__weight">Weight: <span class="weight"></span></h4>
                 <h4 class="pokemon__height">Height: <span class="height"></span></h4>
               </div>
+              <div class="loading__search">
+                <i class="fa fa-spinner"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -80,7 +106,7 @@
           </figure>
           <ul class="footer__list">
             <li class="footer__links">
-              <a href="http://127.0.0.1:5500/Pokedex.html" class="footer__link list__effect list__hover-white">Home</a>
+              <a href="http://127.0.0.1:5500/index.html" class="footer__link list__effect list__hover-white">Home</a>
             </li>
             <li class="footer__links">
               <a href="" class="footer__link list__effect list__hover-white">About</a>

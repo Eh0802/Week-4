@@ -26,7 +26,7 @@
                 </form> -->
               <ul class="nav__list">
                 <li class="links">
-                  <a href="http://127.0.0.1:5500/Pokedex.html" class="link">Home</a>
+                  <a href="http://127.0.0.1:5500/index.html" class="link">Home</a>
                 </li>
                 <li class="links">
                   <a href="http://127.0.0.1:5500/PokeID+.html" class="link">ID+ </a>
@@ -38,9 +38,32 @@
                   <a href="http://127.0.0.1:5500/Search.html" class="link"><span class="search__btn">Search</span></a>
                 </li>
               </ul>
+              <button class="btn__menu" onclick="openMenu()">
+                <i class="fa fa-bars"></i>
+              </button>
+              <div class="menu__backdrop">
+                <button class="btn__menu btn__menu--close" onclick="closeMenu()" >
+                  <i class="fa fa-times"></i>
+                </button>
+                <ul class="menu__links">
+                  <li class="menu__list">
+                    <a href="http://127.0.0.1:5500/index.html" class="menu__link">Home</a>
+                  </li>
+                  <li class="menu__list">
+                    <a href="http://127.0.0.1:5500/PokeID+.html" class="menu__link">ID+</a>
+                  </li>
+                  <li class="menu__list">
+                    <a href="http://127.0.0.1:5500/PokeZ-A.html" class="menu__link">Z-A</a>
+                  </li>
+                  <li class="menu__list">
+                    <a href="http://127.0.0.1:5500/Search.html" class="menu__link">Search</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
       </nav>
+    <div class="loading"></div>
   </section>
   <body>
     <main>
@@ -75,7 +98,7 @@
             </figure>
             <ul class="footer__list">
               <li class="footer__links">
-                <a href="" class="footer__link">Home</a>
+                <a href="http://127.0.0.1:5500/index.html" class="footer__link">Home</a>
               </li>
               <li class="footer__links">
                 <a href="" class="footer__link">About</a>
