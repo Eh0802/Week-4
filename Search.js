@@ -3,7 +3,7 @@
 const pokemonSprites = document.querySelector(" .pokemon__img")
 const pokemonName = document.querySelector(" .name")
 const pokemonId = document.querySelector(" .id")
-const pokemonType = document.querySelector(" .pokemon__type")
+const pokemonType = document.querySelector(" .type")
 const pokemonWeight = document.querySelector(" .weight")
 const pokemonHeight = document.querySelector(" .height")
 

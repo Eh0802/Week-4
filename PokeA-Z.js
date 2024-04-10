@@ -1,7 +1,6 @@
 
 const pokemons = document.getElementById("pokemons");
 
-
 const featchPokemon = () => {
 
     const promises = []

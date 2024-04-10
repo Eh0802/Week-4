@@ -295,7 +295,21 @@ button {
     color:yellow;
     text-decoration: underline;
     padding-top: 24px;
+    animation: fade-up 800ms 1000ms backwards;
 }
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1; 
+        transform: translateY(0)
+    }
+}
+
 
 #pokemonName {
     font-size: 16px;
@@ -335,6 +349,7 @@ button {
     justify-content: center;
     align-items: center;
     padding: 35px 0;
+    animation: fade-up 600ms 1500ms backwards;
     
 }
 
@@ -373,6 +388,7 @@ footer{
     position: fixed;
     bottom: 0;
     width: 100%;
+    background-color: #242424;
 }
 
 .footer__container {
@@ -422,6 +438,65 @@ footer{
     color: white;
 }
 
+@media (max-width: 320px) {
+    .title{
+        font-size: 10px;
+    } 
+
+    .btn__menu {
+        margin-right: -100px;
+    }
+
+    .logo {
+        font-size: 10px;
+    }
+
+    #pokemons {
+        width: 100%;
+        max-width: 280px;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .pokemon {
+        width: 100%;
+    }
+
+    .footer {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .footer__img {
+        display: none;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .title {
+        font-size: 20px;
+    }
+
+    .pokemon {
+        width: 50%;
+    }
+
+    .footer {
+        width: 100%;
+        max-width: 450px;
+    }
+    .footer__img {
+        display: none;
+    }
+
+    .footer__list {
+        display: flex;
+        justify-content: space-around;
+    }
+}
 
 @media (max-width: 550px) {
 .nav__list {
@@ -432,6 +507,28 @@ footer{
     display: block;
 }
 
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 30px;
+    }
+    
+    .footer__img {
+        display: none;
+    }
+}
+
+@media (max-width: 1200px) {
+    .row {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .title {
+        font-size: 40px;
+    }
 }
 
 
