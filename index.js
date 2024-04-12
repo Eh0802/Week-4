@@ -5,7 +5,7 @@ window.addEventListener("load", () => {
     loading.classList.add("loader-hidden");
 
     loading.addEventListener("transitionend", () => {
-        document.body.removeChild("loading");
+        // document.body.removeChild("loading");
     })
 } )
 
@@ -16,4 +16,15 @@ function openMenu() {
 }
 function closeMenu() {
     document.body.classList.remove('menu--open')
+}
+
+function toHomePage() {
+    window.location.href = 'http://127.0.0.1:5500/index.html'
+    console.log(toHomePage)
+}
+function idLowToHigh() {
+    window.location.href = `http://127.0.0.1:5500/PokeID+.html`
+}
+function searchPage() {
+    window.location.href = `http://127.0.0.1:5500/Search.html`
 }

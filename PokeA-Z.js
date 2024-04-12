@@ -83,4 +83,17 @@ window.addEventListener("load", () => {
     })
 } )
 
+function toHomePage() {
+    window.location.href = 'http://127.0.0.1:5500/index.html'
+}
+function idHighToLow() {
+    window.location.href = 'http://127.0.0.1:5500/PokeID+.html'
+}
+function orderBackward() {
+    window.location.href = 'http://127.0.0.1:5500/PokeZ-A.html'
+}
+function searchPage() {
+    window.location.href = 'http://127.0.0.1:5500/Search.html'
+}
+
 featchPokemon();
